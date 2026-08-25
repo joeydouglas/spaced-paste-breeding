@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaced Paste (DDU x NG) - Breeding Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌿 Spaced Paste (DDU x NG)</h1>
+            <p class="subtitle">F1 Breeding Population Tracker</p>
+            <p class="subtitle">Last updated: August 25, 2026 at 02:08 PM</p>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Total Plants</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number top-keeper">0</div>
+                <div class="stat-label">Top Keepers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number keeper">0</div>
+                <div class="stat-label">Keepers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number culled">0</div>
+                <div class="stat-label">Culled</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Photos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0.0%</div>
+                <div class="stat-label">Selection Rate</div>
+            </div>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterPlants('all')">All Plants</button>
+            <button class="filter-btn" onclick="filterPlants('top_keeper')">💚💚 Top Keepers</button>
+            <button class="filter-btn" onclick="filterPlants('keeper')">💚 Keepers</button>
+            <button class="filter-btn" onclick="filterPlants('culled')">☠️ Culled</button>
+        </div>
+        
+        <div class="grid" id="plantGrid">
+
+            <a href="plants/sp06.html" class="plant-card active" data-status="active">
+                <div class="plant-image"></div>
+                <div class="plant-info">
+                    <div class="plant-id">sp06 ❓</div>
+                    <span class="status-badge active">Unknown</span>
+                    <div class="plant-details">
+                        No details recorded
+                    </div>
+                    
+                </div>
+            </a>
+
+        </div>
+        
+        <footer>
+            <div class="links">
+                <a href="https://docs.google.com/document/d/11Y5zLi5UbbgWSusWc7uG5epmoYjwGfUSfrrbTZfsRc4/edit" target="_blank">📊 Google Sheet</a>
+                <a href="https://drive.google.com/drive/folders/1TvcGpL7pHlrGRyz0acB2RMoLiBSgYbFb" target="_blank">📁 Drive Folder</a>
+                <a href="https://drive.google.com/drive/folders/1gzt_TrKkViT7Rs54cRJ7f_lt2Jv074_N" target="_blank">📸 Photos</a>
+                <a href="https://drive.google.com/drive/folders/1Mr2SYMw0o2feKQcQXYHDzb1YUS6agSNQ" target="_blank">📝 Notes</a>
+            </div>
+            <p style="margin-top: 20px;">
+                Automated breeding tracker powered by Claude<br>
+                Cross: Spaced Paste (DDU x NG) | Generation: F1 | Population: 1 plants | Photos: 0
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        function filterPlants(status) {
+            const cards = document.querySelectorAll('.plant-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            cards.forEach(card => {
+                if (status === 'all' || card.dataset.status === status) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
