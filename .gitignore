@@ -7,3 +7,15 @@ var/
 real-channel.json
 __pycache__/
 *.py[cod]
+
+# --- Live working files (NOT part of the markdown data repo) ---
+# This directory is a live project working dir as well as the data repo.
+# Only project.md and plants/<ID>.md belong on the remote; everything below
+# is local runtime state or per-project tooling.
+tracker.json
+cache/
+photo_staging/
+dashboard/
+generate_dashboard.py
+monitor_breeding_notes.py
+photo_handler.py
