@@ -1,17 +1,34 @@
-# Spaced Paste (Dulce de Uva x Nana Glue) Breeding Tracker
+# Spaced Paste (Dulce de Uva x Nana Glue) — Breeding Data Repo
 
-Automated breeding-population dashboard for the **Spaced Paste (Dulce de Uva x Nana Glue)** cross, ingesting live observations from the shared #breeding Discord channel and syncing to Google Drive.
+**Record of truth** for the **Spaced Paste (Dulce de Uva x Nana Glue)** breeding cross,
+in markdown. Observations arrive from the shared #breeding Discord channel and are committed
+here automatically.
 
-- Live dashboard: https://joeydouglas.github.io/spaced-paste-breeding/
-- Plant ID convention: `sp06`, `sp07`, ... (parsed from Discord text via a tightly-anchored `\bsp[\s-]?(\d{1,2})\b` pattern -- deliberately strict since "sp" is a common English substring and this channel is shared with two other crosses)
-- Source of truth: `tracker.json` in the companion `~/.hermes/breeding/spaced-paste/` working directory (not this repo -- this repo holds the generated static dashboard only).
+## Layout
 
-## Data provenance note
+| Path              | Meaning                                            |
+| ----------------- | -------------------------------------------------- |
+| `project.md`      | Cross-level record: parents, roster, project notes  |
+| `plants/<ID>.md`  | One file per plant — the plant's full record        |
 
-Seed data for `sp06` was extracted from the Google Doc "Spaced Paste (DDU x NG)" (1 plant, 1 observation). Two ambiguities were flagged and have since been confirmed by Joey (2026-08-25):
+These are the only files the breeding data API reads; anything else in this repo is ignored.
+
+- Plant ID convention: `sp01`, `sp02`, ... (parsed from Discord text via a tightly-anchored
+  `\bsp[\s-]?(\d{1,2})\b` pattern — deliberately strict, since "sp" is a common English
+  substring and the #breeding channel is shared with other crosses)
+- Legacy generated dashboard (HTML/CSS): https://github.com/joeydouglas/spaced-paste-dashboard-legacy
+
+## History
+
+This repo previously held **both** the markdown data and the generated static dashboard.
+The dashboard was split out into `joeydouglas/spaced-paste-dashboard-legacy`; this repo is
+now data-only. No history was rewritten — the dashboard files were removed in an ordinary
+commit and remain reachable in this repo's history.
+
+## Provenance note
+
+Seed data for `sp06` was extracted from the Google Doc "Spaced Paste (DDU x NG)". Two
+ambiguities were confirmed by Joey (2026-08-25):
+
 - **DDU = Dulce de Uva** (confirmed).
 - **NG parent = the same Nana Glue** used in the Mule Fuel x Nana Glue cross (confirmed).
-
-No explicit keeper/culled status was found for `sp06` in the source doc, so its status remains `active` pending further observation.
-
-See `tracker.json`'s `notes_meta.resolved_ambiguities` for details.
