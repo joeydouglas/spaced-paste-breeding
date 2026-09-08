@@ -3,7 +3,7 @@ cross_name: Spaced Paste (Dulce de Uva x Nana Glue)
 genetics: null
 breeder_lineage: null
 plant_id_prefixes:
-- prefix: sp
+- prefix: SP
   pattern: \bsp[\s\-]?(\d{1,2})\b
 auto_create: false
 github_repo: joeydouglas/spaced-paste-breeding
@@ -35,9 +35,9 @@ notes_meta:
 created: '2026-08-25T00:00:00'
 last_updated: '2026-08-25T00:00:00'
 plant_order:
-- sp06
-- sp01
-- sp02
-- sp03
-- sp05
+- SP06
+- SP01
+- SP02
+- SP03
+- SP05
 ---
